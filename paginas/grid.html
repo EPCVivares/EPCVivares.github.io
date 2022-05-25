@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item1 { grid-area: header; 
+        background-color: red;
+        }
+        .item2 { grid-area: nav; 
+            background-color: green;
+        }
+        .item3 { grid-area: aside; 
+            background-color: yellow;}
+        .item4 { grid-area: main; 
+        background-color: pink;}
+        .item5 { grid-area: menu; 
+            background-color: blue;}
+        .item6 { grid-area: footer;
+        background-color: grey; }
+        
+         
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'header header header header header header'
+            'nav nav nav nav nav nav'
+            'aside aside main main main menu'
+            'footer footer footer footer footer footer';
+          grid-gap: 10px; /*huecos de los grid*/
+          background-color: #1a1b1b;
+          padding: 10px;
+        }
+        
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        </style>
+</head>
+        <body>
+        
+        <h1>Grid Layout</h1>
+        
+        <p>This grid layout contains six columns and three rows:</p>
+        
+        <div class="grid-container">
+          <div class="item1">Header</div>
+          <div class="item2">nav</div>
+          <div class="item3">aside</div>  
+          <div class="item4">main</div>
+          <div class="item5">Menu</div>
+          <div class="item6">Footer</div>
+        </div>
+    
+</body>
+</html>
