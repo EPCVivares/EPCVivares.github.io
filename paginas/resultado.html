@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" contenido="Detalle, regalo, manualidades, lámparas, Naviadad, Tocados, Carnaval">
+	<meta name="description" contenido="Ideas para regalos artesanales">
+	<meta name="author" contenido="Esmeralda Parra Cano">
+    <meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../multimedia/favicon.png" sizes="32x32"> <!--Mi icono favorito-->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/funciones.js"></script>
+    <style>
+    
+     
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .barra {
+      overflow: hidden;
+      background-color: hsla(80, 37%, 36%, 0.904);
+    }
+    
+    .barra a {
+      float: left;
+      display: block;
+      color: hsla(0, 0%, 100%, 0.982);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .barra a:hover {
+      background-color: hsla(271, 49%, 65%, 0.89);
+      color: hsla(0, 0%, 100%, 0.982);
+    }
+    
+    .barra a.active {
+      background-color: hsla(271, 49%, 65%, 0.89);
+      color: hsla(0, 0%, 100%, 0.982);
+    }
+    
+    .barra .icon {
+      display: none;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .barra a:not(:first-child) {display: none;}
+      .barra a.icon {
+        float: right;
+        display: block;
+      }
+    }
+    
+    @media screen and (max-width: 600px) {
+      .barra.responsive {position: relative;}
+      .barra.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .barra.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+    </style>
+    </head>
+    <body id="idd">
+    
+    <div class="barra" id="navegacion">
+      <a href="../index.html" class="active">Inicio</a>
+      <a href="">Novedades</a>
+      <a href="./contacto.html">Contáctanos</a>
+      <a href="">Ubicación</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    
+    <div style="padding-left:16px">
+      <button type="button" onclick="document.getElementById('idd').style.backgroundColor = 'black'">
+        Modo oscuro
+      </button>
+      <button type="button" onclick="document.getElementById('idd').style.backgroundColor = 'white'">
+        Modo claro
+      </button>
+
+      <h2>Contenido recogido por el Formulario</h2>
+      <p>Datos:</p>
+
+      <p id="dato"></p>
+      <button type="button" onclick="recogerDatos()">
+        Mostrar Datos
+      </button>
+      <script>
+          document.getElementById("dato").innerHTML=recogerDatos();
+      </script>
+    </div>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("navegacion");
+      if (x.className === "barra") {
+        x.className += " responsive";
+      } else {
+        x.className = "barra";
+      }
+    }
+    </script>
+    
+    </body>
+    </html>
+    
