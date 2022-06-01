@@ -1,12 +1,199 @@
+/*Enlace a las fuentes que voy a usar*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+
+
+/* * =========================================================== */
+/* * ============ ESTILOS GENERALES ============================ */
+/* * =========================================================== */
 *
 {
     margin: 0;
     padding: 0;
+    font-size-adjust: 1em;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: cursive, sans-serif;
 }
+
+body{
+    background-image: linear-gradient(hsla(120, 73%, 85%, 0.7), hsla(291, 73%, 72%, 0.7));
+   
+     }
+ 
+ p{
+     text-align: justify;
+     font-size: 1em; /*Esta medida es igual a 18px*/
+ }
+ h1 {
+    text-align: center;
+    color: hsla(303, 56%, 35%, 0.952);
+    text-emphasis-color: hsla(64, 90%, 54%, 0.959);
+    text-shadow: 2px 2px 5px hsla(93, 84%, 22%, 0.877);
+}
+
+p footer{
+   color: red; /*----------------------------------------------------------------------------------este valor no funciona. Algo afecta*/
+}
+button{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* * =========================================================== */
+/* * ============ ESTILOS DE LA SECCION GRID =================== */
+/* * =========================================================== */
+
+
+
+.item1{
+    grid-area: header;
+    background-color: hsla(80, 37%, 36%, 0.904);
+    background-image:url(../multimedia/regalo.gif);
+    vertical-align: middle;
+    }
+
+.item2{
+    grid-area: nav;
+    background-color: hsla(80, 37%, 36%, 0.925);
+    vertical-align: middle;
+    font-size: 1.5em;
+    position: sticky;
+    
+    
+    }
+
+.item3{
+    grid-area: aside1;
+   /* background-color: rgb(177, 230, 230);*/
+    }
+
+.item4{
+    grid-area: main;
+    flex-wrap: wrap;
+   /* background-color: blueviolet;*/
+ /*  background-image: image("../final/multimedia/imagenes/fondo.jpeg");*/
+    }
+
+.item5{
+    grid-area: aside2;
+    position: sticky;
+    top: 0;
+ /*   background-color: rgb(192, 97, 97);*/
+   /* align-items:;*/
+    }
+
+.item6{
+    grid-area: footer;
+    background-color: hsla(80, 37%, 36%, 0.925);
+    position: sticky;
+    bottom: 0;
+    }
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header'
+        'nav nav nav nav nav nav'
+        'aside1 main main main main aside2'
+        'footer footer footer footer footer footer';
+    grid-gap: 10px;
+ /*   background-color: black;*/
+    padding: 10px;
+    }
+
+.grid-container > div {
+                   
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 1em;
+}
+
+/* * =========================================================== */
+/* * ============ ESTILOS DE LA SECCION DE LOS MENÚS =========== */
+/* * =========================================================== */
+header {
+    margin:auto;
+    width:auto;    /*width: 100%;*/
+    height: 300px;
+    font-family:cursive, Arial, Helvetica, sans-serif;
+    position: sticky;
+}
+
+nav{
+    /*  text-align: center;
+         vertical-align: middle;
+         font-size:large;
+        overflow: hidden;*/
+    display: flex;
+    background-color: hsla(78, 34%, 21%, 0.9);
+    font-size: 1.5em;
+    position: sticky; /*------------------------------------------------*/
+    top: 0;
+   
+}
+
+nav a   {/*Estilo de los enlaces de la barra de navegación*//*--------------------------------------creo que sobra------------------------------*/
+    float:inline-start;
+    display: block;
+    color: hsla(79, 29%, 52%, 0.5);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration:none;
+    
+    }
+
+ul, ol {
+    list-style:none;
+}
+.nav > li {
+    float: left;
+    top: 0;
+    
+}
+.nav li a {
+    /*background-color:hsla(99, 39%, 19%, 0.966);*/
+    color:hsla(0, 0%, 100%, 0.982);
+    text-decoration:none;
+    text-align: center;
+    padding:15px 15px;
+  /*  display:block;   */
+}
+
+.nav li a:hover {
+    background-color:hsla(271, 49%, 65%, 0.89);
+}/*
+.nav li ul {
+    display:none;
+    position:fixed;
+    min-width:140px;
+}
+.nav li:hover > ul {/*Submenús
+    display:block; 
+}
+.nav li ul li {
+    position:relative;
+   
+}
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+*/
+.contenedor {
+    max-width:fit-content;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    }
+
+
+/* * =========================================================== */
+/* * ============ ESTILOS DE LA SECCION DE LA GALERIA ========== */
+/* * =========================================================== */
+
 section
 {
     flex-wrap: wrap;
@@ -54,4 +241,93 @@ section ul li.active
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+/* * ============================== */
+/* * ====== MEDIA QUERIES ========= */
+/* * ============================== */
+@media screen and (max-width: 900px){
+	.nav .contenedor {
+		flex-wrap: wrap;
+		margin: 0;
+		width: 100%;
+	}
+
+	.nav a {/*------------------------------------------------revisarlo--------------------------------------*/
+		width: auto;
+		flex: 1;
+	}
+
+	.contenedor {
+		height: 30vh;
+	}
+
+	header .contenedor {/*---------------------------------quizá sobre----------------------------------------*/
+	/*	flex-direction: column;*/
+        display: block;
+	}
+    header .nav{ /*---------------------------------quizá sobre----------------------------------------*/
+        display:inline-block
+    }
+	aside{
+		position: static;
+		margin: 40px 0 0 0;
+	}
+    .item4 .product{ /*main*/
+        display: block;
+    }
+    .item4{
+        display: block;
+    }
+    .item5{ /*desaparace un aside*/
+        display: none;
+
+}
+    .item3{ /*desaparece el otro aside*/
+        display: none;
+}
+    .grid-container{
+        display: block;
+    }
+    section ul{
+        display:block;
+    }
+    header nav ul{
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {                                              /*-------------------------quitar: prueba----------------------------*/
+      background-color: rgb(245, 4, 4);
+        }
+    .contenedor{
+        flex-direction: column;
+        background-color: purple;       /*------------------------quitar esto luego---------------------------*/
+    }
+    .nav, .contenedor{   
+            flex-direction: column;
+        background-color: black;    /*------------------------quitar esto luego---------------------------*/
+        float: none;
+       
+    }
+    .nav a {/*------------------------------------------------revisarlo--------------------------------------*/
+		width: auto;
+		flex: 1;
+	}
+    section ul{
+        display:block;
+    }
+    header nav ul{
+        display: block;
+    }
+}
+
+  @media screen and (max-width: 300px) {
+    body {
+      background-color: rgb(244, 240, 7);/*------------------------quitar esto luego---------------------------*/
+    }
+    movil{
+        
+    }
 }
